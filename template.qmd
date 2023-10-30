@@ -1,0 +1,61 @@
+---
+title: "Template"
+format: 
+  revealjs:
+    controls: true
+    theme: moon
+    css: "/www/stylesheet.css"
+    chalkboard: true
+server: shiny
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+
+## Code {auto-animate="true"}
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+  # Render a barplot
+})
+```
+
+## Code {auto-animate="true"}
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```r
+# Fill in the spot we created for a plot
+output$phonePlot <- renderPlot({
+  # Render a barplot
+  barplot(WorldPhones[,input$region]*1000, 
+          main=input$region,
+          ylab="Number of Telephones",
+          xlab="Year")
+})
+```
+
+## Test
+
+This code computes the answer to one plus one,
+change it so it computes two plus two:
+
+```{r addition, exercise=TRUE}
+1 + 1
+```
